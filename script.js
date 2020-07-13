@@ -44,24 +44,28 @@ $.ajax({
     $("#5day").text(JSON.stringify(response));
     
     var temp1 = (response.list[1].main.temp - 273.15) * 1.80 + 32;
-    $(".card-title-1").text(moment(response.list[1].dt_txt).format('dddd'));
+    $(".card-title-1").text(moment(response.list[1].dt_txt).format('l'));
     $(".card-temp").text("Temperature: (F) " + temp1.toFixed(2));
     $(".card-hum").text("Humidity: " + response.list[1].main.humidity);
 
-    $(".card-title-2").text(moment(response.list[8].dt_txt).format('dddd'));
-    $(".card-temp-2").text("Temperature: (F) " + response.list[8].main.temp);
+    var temp2 = (response.list[8].main.temp - 273.15) * 1.80 + 32;
+    $(".card-title-2").text(moment(response.list[8].dt_txt).format('l'));
+    $(".card-temp-2").text("Temperature: (F) " + temp2.toFixed(2));
     $(".card-hum-2").text("Humidity: " + response.list[8].main.humidity);
 
-    $(".card-title-3").text(moment(response.list[16].dt_txt).format('dddd'));
-    $(".card-temp-3").text("Temperature: (F) " + response.list[16].main.temp);
+    var temp3 = (response.list[16].main.temp - 273.15) * 1.80 + 32;
+    $(".card-title-3").text(moment(response.list[16].dt_txt).format('l'));
+    $(".card-temp-3").text("Temperature: (F) " + temp3.toFixed(2));
     $(".card-hum-3").text("Humidity: " + response.list[16].main.humidity);
 
-    $(".card-title-4").text(moment(response.list[24].dt_txt).format('dddd'));
-    $(".card-temp-4").text("Temperature: (F) " + response.list[24].main.temp);
+    var temp4 = (response.list[24].main.temp - 273.15) * 1.80 + 32;
+    $(".card-title-4").text(moment(response.list[24].dt_txt).format('l'));
+    $(".card-temp-4").text("Temperature: (F) " + temp4.toFixed(2));
     $(".card-hum-4").text("Humidity: " + response.list[24].main.humidity);
 
-    $(".card-title-5").text(moment(response.list[32].dt_txt).format('dddd'));
-    $(".card-temp-5").text("Temperature: (F) " + response.list[32].main.temp);
+    var temp5 = (response.list[32].main.temp - 273.15) * 1.80 + 32;
+    $(".card-title-5").text(moment(response.list[32].dt_txt).format('l'));
+    $(".card-temp-5").text("Temperature: (F) " + temp5.toFixed(2));
     $(".card-hum-5").text("Humidity: " + response.list[32].main.humidity);
     // ${moment(day.dt_txt).format('dddd')}
 })
