@@ -39,8 +39,12 @@ $.ajax({
     Method: "GET"
 }).then(function(response){
     console.log(response);
+    console.log(response.list[1].dt_txt);
+    console.log(moment(response.list[1].dt_txt).format('dddd'));
     $("#5day").text(JSON.stringify(response));
-    $(".card-text").text(response.list[1].dt_txt);
+    
+    $(".card-text").text(moment(response.list[1].dt_txt).format('dddd'));
+    $(".card-temp").text(response.list[1].main.temp);
     // ${moment(day.dt_txt).format('dddd')}
 })
 
