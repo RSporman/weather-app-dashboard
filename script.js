@@ -1,12 +1,13 @@
 
-
+// The below starts a search function with an on click event
 $("#search"). on("click", function(event){
 event.preventDefault();
+// The below takes in the user input of what city to search for along with my special api key and url
 var city = $("#city-input").val();
 var apiKey = 'f2d38d738c494af392e115cdde527abd';
 var queryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
 
-
+// The below calls an ajax method that gets the current weather data and pastes it on the webpage
 $.ajax({
     url: queryUrl,
     method: "GET"
@@ -32,6 +33,7 @@ $(".humidity").text("Humidity: " + response.main.humidity);
 $(".uv").text("UV Index: " + uvIndex);
 });
 
+// The below calls the 5 day forecast for the city that was searched and pastes the data on the page
 var fiveDay = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
 
 $.ajax({
