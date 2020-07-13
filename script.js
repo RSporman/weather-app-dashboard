@@ -43,8 +43,9 @@ $.ajax({
     console.log(moment(response.list[1].dt_txt).format('dddd'));
     $("#5day").text(JSON.stringify(response));
     
-    $(".card-text").text(moment(response.list[1].dt_txt).format('dddd'));
-    $(".card-temp").text(response.list[1].main.temp);
+    $(".card-title-1").text(moment(response.list[1].dt_txt).format('dddd'));
+    $(".card-temp").text("Temperature: (F) " + response.list[1].main.temp);
+    $(".card-hum").text("Humidity: " + response.list[1].main.humidity);
     // ${moment(day.dt_txt).format('dddd')}
 })
 
