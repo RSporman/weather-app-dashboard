@@ -46,6 +46,14 @@ $.ajax({
     $(".card-title-1").text(moment(response.list[1].dt_txt).format('dddd'));
     $(".card-temp").text("Temperature: (F) " + response.list[1].main.temp);
     $(".card-hum").text("Humidity: " + response.list[1].main.humidity);
+
+    $(".card-title-2").text(moment(response.list[8].dt_txt).format('dddd'));
+    $(".card-temp-2").text("Temperature: (F) " + response.list[8].main.temp);
+    $(".card-hum-2").text("Humidity: " + response.list[8].main.humidity);
+
+    $(".card-title-3").text(moment(response.list[16].dt_txt).format('dddd'));
+    $(".card-temp-3").text("Temperature: (F) " + response.list[16].main.temp);
+    $(".card-hum-3").text("Humidity: " + response.list[16].main.humidity);
     // ${moment(day.dt_txt).format('dddd')}
 })
 
