@@ -14,19 +14,20 @@ $.ajax({
   }).then(function(response) {
       console.log(response);
       var uvUrl = "http://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + response.coord.lat + "&lon=" + response.coord.lon;
-      var uvIndex = response.value
+      var uvIndex = uvUrl.value
+      
       $.ajax({
         url: uvUrl,
         method: "GET"
     }).then(function(response){
-        // console.log(response)
     })
+    console.log(uvIndex)
 //    $("#current").text(JSON.stringify(response));
    $(".city").html("<h1>" + response.name + " Weather Details</h1>");
    var tempF = (response.main.temp - 273.15) * 1.80 + 32;
 
-        // add temp content to html
-    //  $(".temp").text("Temperature (K) " + response.main.temp);
+  // add temp content to html
+    
 $(".tempF").text("Temperature (F) " + tempF.toFixed(2));
 $(".wind").text("Wind Speed: " + response.wind.speed);
 $(".humidity").text("Humidity: " + response.main.humidity);
@@ -41,8 +42,6 @@ $.ajax({
     Method: "GET"
 }).then(function(response){
     console.log(response);
-    console.log(response.list[1].dt_txt);
-    console.log(moment(response.list[1].dt_txt).format('dddd'));
     $("#5day").text(JSON.stringify(response));
     
     var temp1 = (response.list[1].main.temp - 273.15) * 1.80 + 32;
