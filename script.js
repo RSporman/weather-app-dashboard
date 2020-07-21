@@ -5,7 +5,7 @@ event.preventDefault();
 // The below takes in the user input of what city to search for along with my special api key and url
 var city = $("#city-input").val();
 var apiKey = 'f2d38d738c494af392e115cdde527abd';
-var queryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
+var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
 
 // The below calls an ajax method that gets the current weather data and pastes it on the webpage
 $.ajax({
@@ -13,7 +13,7 @@ $.ajax({
     method: "GET"
   }).then(function(response) {
       console.log(response);
-      var uvUrl = "http://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + response.coord.lat + "&lon=" + response.coord.lon;
+      var uvUrl = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + response.coord.lat + "&lon=" + response.coord.lon;
       var uvIndex = uvUrl.value
       
       $.ajax({
@@ -35,7 +35,7 @@ $(".uv").text("UV Index: " + uvIndex);
 });
 
 // The below calls the 5 day forecast for the city that was searched and pastes the data on the page
-var fiveDay = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
+var fiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
 
 $.ajax({
     url: fiveDay,
